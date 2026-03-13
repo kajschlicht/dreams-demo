@@ -5,18 +5,12 @@ export type AtmosphereItem = {
   soundFile?: string;
 };
 
-const OPEN_AIR_SOUND = new URL("../assets/sounds/atmospheresounds/OpenAir.mp3", import.meta.url)
-  .href;
-const URBAN_AIR_SOUND = new URL("../assets/sounds/atmospheresounds/UrbanAir.mp3", import.meta.url)
-  .href;
-const INTERIOR_ROOM_SOUND = new URL(
-  "../assets/sounds/atmospheresounds/InteriorRoom.mp3",
-  import.meta.url
-).href;
-const LOW_WIND_SOUND = new URL("../assets/sounds/atmospheresounds/LowWind.mp3", import.meta.url)
-  .href;
-const DEEP_TONE_SOUND = new URL("../assets/sounds/atmospheresounds/DeepTone.mp3", import.meta.url)
-  .href;
+const base = import.meta.env.BASE_URL;
+const OPEN_AIR_SOUND = `${base}sounds/atmospheresounds/OpenAir.mp3`;
+const URBAN_AIR_SOUND = `${base}sounds/atmospheresounds/UrbanAir.mp3`;
+const INTERIOR_ROOM_SOUND = `${base}sounds/atmospheresounds/InteriorRoom.mp3`;
+const LOW_WIND_SOUND = `${base}sounds/atmospheresounds/LowWind.mp3`;
+const DEEP_TONE_SOUND = `${base}sounds/atmospheresounds/DeepTone.mp3`;
 
 export const atmospheres: AtmosphereItem[] = [
   {

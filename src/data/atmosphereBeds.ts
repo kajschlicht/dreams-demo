@@ -5,14 +5,12 @@ export type AtmosphereBed = {
   description?: string;
 };
 
-const openAirFile = new URL("../assets/sounds/AtmosphereSounds/OpenAir.mp3", import.meta.url).href;
-const urbanAirFile = new URL("../assets/sounds/AtmosphereSounds/UrbanAir.mp3", import.meta.url).href;
-const interiorRoomFile = new URL(
-  "../assets/sounds/AtmosphereSounds/InteriorRoom.mp3",
-  import.meta.url
-).href;
-const lowWindFile = new URL("../assets/sounds/AtmosphereSounds/LowWind.mp3", import.meta.url).href;
-const deepToneFile = new URL("../assets/sounds/AtmosphereSounds/DeepTone.mp3", import.meta.url).href;
+const base = import.meta.env.BASE_URL;
+const openAirFile = `${base}sounds/atmospheresounds/OpenAir.mp3`;
+const urbanAirFile = `${base}sounds/atmospheresounds/UrbanAir.mp3`;
+const interiorRoomFile = `${base}sounds/atmospheresounds/InteriorRoom.mp3`;
+const lowWindFile = `${base}sounds/atmospheresounds/LowWind.mp3`;
+const deepToneFile = `${base}sounds/atmospheresounds/DeepTone.mp3`;
 
 export const atmosphereBeds: AtmosphereBed[] = [
   {

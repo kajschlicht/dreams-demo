@@ -58,6 +58,7 @@ class AtmosphereBedEngine {
     if (!atmosphere.soundFile) {
       if (!this.missingFileWarnings.has(atmosphere.id)) {
         this.missingFileWarnings.add(atmosphere.id);
+        console.warn("Atmosphere sound missing:", atmosphere.soundFile);
         console.warn(`[audio] atmosphere audio not available for '${atmosphere.id}'.`);
       }
       this.fadeOutCurrent();
@@ -78,6 +79,7 @@ class AtmosphereBedEngine {
         const key = `${atmosphere.id}:load`;
         if (this.failedFileWarnings.has(key)) return;
         this.failedFileWarnings.add(key);
+        console.warn("Atmosphere sound missing:", atmosphere.soundFile);
         console.warn(`[audio] failed to load atmosphere sound '${atmosphere.soundFile}'.`, error);
       },
       onplayerror: (_id: number, error: unknown) => {
